@@ -18,7 +18,7 @@
   position: absolute;
   width: 20px;
   height: 20px;
-  background: url('chrome-extension://__MSG_@@extension_id__/assets/images/leaf.png') no-repeat;
+  background: url('chrome-extension://__MSG_@@extension_id__/assets/images/leaf.svg') no-repeat;
   background-size: contain;
   animation: falling linear infinite;
   opacity: 0.8;
@@ -29,7 +29,7 @@
   position: absolute;
   width: 30px;
   height: 30px;
-  background: url('chrome-extension://__MSG_@@extension_id__/assets/images/butterfly.png') no-repeat;
+  background: url('chrome-extension://__MSG_@@extension_id__/assets/images/butterfly.svg') no-repeat;
   background-size: contain;
   animation: floating linear infinite;
   opacity: 0.9;
@@ -49,7 +49,7 @@
   bottom: 0;
   width: 20px;
   height: 0;
-  background: url('chrome-extension://__MSG_@@extension_id__/assets/images/vine.png') repeat-y;
+  background: url('chrome-extension://__MSG_@@extension_id__/assets/images/vine.svg') repeat-y;
   background-size: contain;
   animation: growing 5s ease-out forwards;
   opacity: 0.8;

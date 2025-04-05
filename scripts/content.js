@@ -62,8 +62,25 @@ function updateSound() {
     return;
   }
   
-  audioElement.src = chrome.runtime.getURL(`assets/sounds/${settings.sound}.mp3`);
-  audioElement.play();
+  // Check if the audio file exists
+  const audioUrl = chrome.runtime.getURL(`assets/sounds/${settings.sound}.mp3`);
+  
+  // Create a test request to check if the file exists
+  fetch(audioUrl)
+    .then(response => {
+      if (response.ok) {
+        audioElement.src = audioUrl;
+        audioElement.play().catch(error => {
+          console.error('Error playing audio:', error);
+        });
+      } else {
+        console.warn(`Audio file ${settings.sound}.mp3 not found. Using fallback.`);
+        // Use a fallback or show a message to the user
+      }
+    })
+    .catch(error => {
+      console.error('Error checking audio file:', error);
+    });
 }
 
 function updateVolume() {
@@ -92,7 +109,8 @@ function updateScene() {
   natureContainer.classList.remove('morning', 'afternoon', 'sunset', 'night');
   
   // Set the background image
-  natureContainer.style.backgroundImage = `url(${chrome.runtime.getURL(`assets/images/${settings.scene}.jpg`)})`;
+  const sceneUrl = chrome.runtime.getURL(`assets/images/${settings.scene}.svg`);
+  natureContainer.style.backgroundImage = `url(${sceneUrl})`;
   
   // Add time-based class if applicable
   const hour = new Date().getHours();

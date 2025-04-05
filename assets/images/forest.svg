@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sky -->
+  <rect width="800" height="600" fill="#87CEEB" />
+  
+  <!-- Sun -->
+  <circle cx="700" cy="100" r="50" fill="#FFD700" />
+  
+  <!-- Ground -->
+  <rect width="800" height="200" y="400" fill="#8B4513" />
+  <rect width="800" height="100" y="400" fill="#228B22" />
+  
+  <!-- Trees -->
+  <path d="M100,400 L100,200 L50,200 L100,150 L150,200 L100,200 Z" fill="#006400" />
+  <path d="M200,400 L200,150 L150,150 L200,100 L250,150 L200,150 Z" fill="#006400" />
+  <path d="M300,400 L300,200 L250,200 L300,150 L350,200 L300,200 Z" fill="#006400" />
+  <path d="M400,400 L400,150 L350,150 L400,100 L450,150 L400,150 Z" fill="#006400" />
+  <path d="M500,400 L500,200 L450,200 L500,150 L550,200 L500,200 Z" fill="#006400" />
+  <path d="M600,400 L600,150 L550,150 L600,100 L650,150 L600,150 Z" fill="#006400" />
+  <path d="M700,400 L700,200 L650,200 L700,150 L750,200 L700,200 Z" fill="#006400" />
+</svg> 
