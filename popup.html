@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NatureView Settings</title>
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🌿 NatureView</h1>
+    
+    <section class="settings-section">
+      <h2>Ambient Sounds</h2>
+      <div class="sound-controls">
+        <select id="soundSelect">
+          <option value="forest">Forest Ambience</option>
+          <option value="rain">Gentle Rain</option>
+          <option value="ocean">Ocean Waves</option>
+          <option value="birds">Morning Birds</option>
+          <option value="none">None</option>
+        </select>
+        <input type="range" id="volumeSlider" min="0" max="100" value="50">
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h2>Visual Elements</h2>
+      <div class="visual-controls">
+        <label>
+          <input type="checkbox" id="enableLeaves" checked>
+          Falling Leaves
+        </label>
+        <label>
+          <input type="checkbox" id="enableButterflies" checked>
+          Butterflies
+        </label>
+        <label>
+          <input type="checkbox" id="enableVines" checked>
+          Growing Vines
+        </label>
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h2>Background Scene</h2>
+      <div class="scene-controls">
+        <select id="sceneSelect">
+          <option value="forest">Forest</option>
+          <option value="beach">Beach</option>
+          <option value="mountain">Mountain</option>
+          <option value="meadow">Meadow</option>
+        </select>
+        <label>
+          <input type="checkbox" id="autoTransition" checked>
+          Auto-transition based on time
+        </label>
+      </div>
+    </section>
+
+    <section class="settings-section">
+      <h2>Focus Mode</h2>
+      <div class="focus-controls">
+        <button id="startFocus">Start Focus Session</button>
+        <div id="timer" class="hidden">
+          <span id="timeDisplay">25:00</span>
+          <button id="resetTimer">Reset</button>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script src="scripts/popup.js"></script>
+</body>
+</html> 

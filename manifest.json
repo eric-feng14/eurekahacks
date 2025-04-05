@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "NatureView",
+  "version": "1.0",
+  "description": "Transform your browsing experience by blending nature into your digital world",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "scripting",
+    "alarms"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["styles/content.css"],
+      "js": ["scripts/content.js"]
+    }
+  ],
+  "web_accessible_resources": [{
+    "resources": [
+      "assets/sounds/*",
+      "assets/images/*"
+    ],
+    "matches": ["<all_urls>"]
+  }]
+}

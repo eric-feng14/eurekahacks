@@ -1,0 +1,159 @@
+/* Nature View Container */
+#nature-view-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  opacity: 0.7; /* Semi-transparent to not interfere with content */
+  transition: background-image 1s ease-in-out;
+}
+
+/* Falling Leaves */
+.nature-leaf {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('chrome-extension://__MSG_@@extension_id__/assets/images/leaf.png') no-repeat;
+  background-size: contain;
+  animation: falling linear infinite;
+  opacity: 0.8;
+}
+
+/* Butterflies */
+.nature-butterfly {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: url('chrome-extension://__MSG_@@extension_id__/assets/images/butterfly.png') no-repeat;
+  background-size: contain;
+  animation: floating linear infinite;
+  opacity: 0.9;
+}
+
+/* Vines */
+.nature-vines {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  pointer-events: none;
+}
+
+.nature-vine {
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 0;
+  background: url('chrome-extension://__MSG_@@extension_id__/assets/images/vine.png') repeat-y;
+  background-size: contain;
+  animation: growing 5s ease-out forwards;
+  opacity: 0.8;
+}
+
+/* Animations */
+@keyframes falling {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes floating {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(50px, -50px) rotate(15deg);
+  }
+  50% {
+    transform: translate(100px, 0) rotate(0deg);
+  }
+  75% {
+    transform: translate(50px, 50px) rotate(-15deg);
+  }
+}
+
+@keyframes growing {
+  0% {
+    height: 0;
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  100% {
+    height: 200px;
+    opacity: 0.8;
+  }
+}
+
+/* Focus Mode Overlay */
+.nature-focus-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.nature-focus-overlay.active {
+  opacity: 1;
+}
+
+/* Time-based scene transitions */
+#nature-view-container.morning {
+  filter: brightness(1.1) saturate(1.2);
+}
+
+#nature-view-container.afternoon {
+  filter: brightness(1.2) saturate(1.1);
+}
+
+#nature-view-container.sunset {
+  filter: brightness(0.9) saturate(1.3) hue-rotate(10deg);
+}
+
+#nature-view-container.night {
+  filter: brightness(0.7) saturate(0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nature-leaf, .nature-butterfly {
+    transform: scale(0.7);
+  }
+  
+  .nature-vine {
+    width: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nature-leaf, .nature-butterfly {
+    transform: scale(0.5);
+  }
+  
+  .nature-vine {
+    width: 10px;
+  }
+} 
